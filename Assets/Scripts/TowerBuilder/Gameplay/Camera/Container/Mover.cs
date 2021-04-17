@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace TowerBuilder.Gameplay.Camera.Container
 {
-    [AddComponentMenu("Gameplay/Camera/Container/Movement")]
+    [AddComponentMenu("Gameplay/Camera/Container/Mover")]
     [DisallowMultipleComponent]
-    public class Movement : MonoBehaviour
+    public class Mover : MonoBehaviour
     {
         [SerializeField] private float _speed = 8f;
         [SerializeField] private Transform _target;
