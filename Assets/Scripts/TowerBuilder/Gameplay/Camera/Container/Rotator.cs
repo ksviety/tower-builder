@@ -10,9 +10,6 @@ namespace TowerBuilder.Gameplay.Camera.Container
     [DisallowMultipleComponent]
     public class Rotator : MonoBehaviour
     {
-        [SerializeField] private KeyCode _rotateTowardsKey = KeyCode.E;
-        [SerializeField] private KeyCode _rotateBackwardsKey = KeyCode.Q;
-
         private FloatConstant _speed;
         private FloatConstant _step;
         private Vector3Constant _axis;
@@ -39,9 +36,9 @@ namespace TowerBuilder.Gameplay.Camera.Container
         {
             var direction = Direction.None;
             
-            if (Input.GetKeyDown(_rotateTowardsKey))
+            if (Input.GetKeyDown(KeyCode.E))
                 direction = Direction.Towards;
-            else if (Input.GetKeyDown(_rotateBackwardsKey))
+            else if (Input.GetKeyDown(KeyCode.Q))
                 direction = Direction.Backwards;
 
             if (direction != Direction.None)
