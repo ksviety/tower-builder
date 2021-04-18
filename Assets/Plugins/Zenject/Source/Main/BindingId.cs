@@ -7,44 +7,30 @@ namespace Zenject
     [DebuggerStepThrough]
     public struct BindingId : IEquatable<BindingId>
     {
-        Type _type;
-        object _identifier;
-
         public BindingId(Type type, object identifier)
         {
-            _type = type;
-            _identifier = identifier;
+            Type = type;
+            Identifier = identifier;
         }
 
-        public Type Type
-        {
-            get { return _type; }
-            set { _type = value; }
-        }
+        public Type Type { get; set; }
 
-        public object Identifier
-        {
-            get { return _identifier; }
-            set { _identifier = value; }
-        }
+        public object Identifier { get; set; }
 
         public override string ToString()
         {
-            if (_identifier == null)
-            {
-                return _type.PrettyName();
-            }
+            if (Identifier == null) return Type.PrettyName();
 
-            return "{0} (ID: {1})".Fmt(_type, _identifier);
+            return "{0} (ID: {1})".Fmt(Type, Identifier);
         }
 
         public override int GetHashCode()
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 17;
-                hash = hash * 29 + _type.GetHashCode();
-                hash = hash * 29 + (_identifier == null ? 0 : _identifier.GetHashCode());
+                var hash = 17;
+                hash = hash * 29 + Type.GetHashCode();
+                hash = hash * 29 + (Identifier == null ? 0 : Identifier.GetHashCode());
                 return hash;
             }
         }
@@ -53,7 +39,7 @@ namespace Zenject
         {
             if (other is BindingId)
             {
-                BindingId otherId = (BindingId)other;
+                var otherId = (BindingId) other;
                 return otherId == this;
             }
 

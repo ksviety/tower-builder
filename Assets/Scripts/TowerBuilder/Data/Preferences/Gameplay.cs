@@ -1,3 +1,4 @@
+using TowerBuilder.Gameplay.Camera.Container;
 using UnityEngine;
 
 namespace TowerBuilder.Data.Preferences

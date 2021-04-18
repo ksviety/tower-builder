@@ -1,4 +1,5 @@
 using TowerBuilder.Data.Preferences;
+using TowerBuilder.Gameplay.Camera.Container;
 using UnityEngine;
 using Zenject;
 using GameplayPreferences = TowerBuilder.Data.Preferences.Gameplay;
@@ -9,7 +10,7 @@ namespace TowerBuilder.Installers
     public class GameplayPreferencesInstaller : MonoInstaller
     {
         [SerializeField] private GameplayPreferences _preferences;
-        
+
         public override void InstallBindings()
         {
             Container

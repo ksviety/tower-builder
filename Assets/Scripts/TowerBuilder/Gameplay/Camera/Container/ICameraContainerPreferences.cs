@@ -1,6 +1,6 @@
 using TowerBuilder.Data.Values;
 
-namespace TowerBuilder.Data.Preferences
+namespace TowerBuilder.Gameplay.Camera.Container
 {
     public interface ICameraContainerPreferences
     {
