@@ -1,4 +1,6 @@
+using TowerBuilder.Gameplay.Tags;
 using UnityEngine;
+using Zenject;
 
 namespace TowerBuilder.Gameplay.Camera.Container
 {
@@ -7,7 +9,14 @@ namespace TowerBuilder.Gameplay.Camera.Container
     public class Mover : MonoBehaviour
     {
         [SerializeField] private float _speed = 8f;
-        [SerializeField] private Transform _target;
+        
+        private Transform _target;
+
+        [Inject]
+        public void Construct(CameraTargetTag target)
+        {
+            _target = target.transform;
+        }
 
         private void LateUpdate()
         {
