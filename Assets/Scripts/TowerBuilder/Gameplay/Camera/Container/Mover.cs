@@ -22,10 +22,10 @@ namespace TowerBuilder.Gameplay.Camera.Container
         }
 
         [Inject]
-        private void Construct(CameraTargetTag target, ICameraContainerPreferences preferences)
+        private void Construct(CameraTargetTag target, IMovementPreferences preferences)
         {
             _target = target.transform;
-            _speed = preferences.MovementSpeed;
+            _speed = preferences.Speed;
         }
     }
 }

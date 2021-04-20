@@ -1,4 +1,5 @@
-using TowerBuilder.Gameplay.Camera.Container;
+using ICameraContainerRotationPreference = TowerBuilder.Gameplay.Camera.Container.IRotationPreferences;
+using ICameraContainerMovementPreferences = TowerBuilder.Gameplay.Camera.Container.IMovementPreferences;
 using UnityEngine;
 
 namespace TowerBuilder.Data.Preferences
@@ -6,8 +7,11 @@ namespace TowerBuilder.Data.Preferences
     [CreateAssetMenu(fileName = "GameplayPreferences", menuName = "Preferences/Gameplay", order = 0)]
     public class Gameplay : ScriptableObject, IGameplayPreferences
     {
-        [SerializeField] private CameraContainer _cameraContainer;
+        [Header("Camera Container Preferences")]
+        [SerializeField] private CameraContainerRotation _cameraContainerRotation;
+        [SerializeField] private CameraContainerMovement _cameraContainerMovement;
 
-        public ICameraContainerPreferences CameraContainer => _cameraContainer;
+        public ICameraContainerRotationPreference CameraContainerRotation => _cameraContainerRotation;
+        public ICameraContainerMovementPreferences CameraContainerMovement => _cameraContainerMovement;
     }
 }

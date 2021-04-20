@@ -1,8 +1,9 @@
 using TowerBuilder.Data.Preferences;
-using TowerBuilder.Gameplay.Camera.Container;
 using UnityEngine;
 using Zenject;
 using GameplayPreferences = TowerBuilder.Data.Preferences.Gameplay;
+using ICameraContainerRotationPreference = TowerBuilder.Gameplay.Camera.Container.IRotationPreferences;
+using ICameraContainerMovementPreferences = TowerBuilder.Gameplay.Camera.Container.IMovementPreferences;
 
 namespace TowerBuilder.Installers
 {
@@ -19,8 +20,13 @@ namespace TowerBuilder.Installers
                 .AsCached();
 
             Container
-                .Bind<ICameraContainerPreferences>()
-                .FromInstance(_preferences.CameraContainer)
+                .Bind<ICameraContainerRotationPreference>()
+                .FromInstance(_preferences.CameraContainerRotation)
+                .AsCached();
+            
+            Container
+                .Bind<ICameraContainerMovementPreferences>()
+                .FromInstance(_preferences.CameraContainerMovement)
                 .AsCached();
         }
     }

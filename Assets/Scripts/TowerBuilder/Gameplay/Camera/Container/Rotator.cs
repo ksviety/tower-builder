@@ -55,11 +55,11 @@ namespace TowerBuilder.Gameplay.Camera.Container
         }
 
         [Inject]
-        private void Construct(ICameraContainerPreferences preferences)
+        private void Construct(IRotationPreferences preferences)
         {
-            _speed = preferences.RotationSpeed;
-            _step = preferences.RotationStep;
-            _axis = preferences.RotationAxis;
+            _speed = preferences.Speed;
+            _step = preferences.Step;
+            _axis = preferences.Axis;
         }
 
         private enum Direction
