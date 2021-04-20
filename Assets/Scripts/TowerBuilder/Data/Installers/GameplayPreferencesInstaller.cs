@@ -5,7 +5,7 @@ using GameplayPreferences = TowerBuilder.Data.Preferences.Gameplay;
 using ICameraContainerRotationPreference = TowerBuilder.Gameplay.Camera.Container.IRotationPreferences;
 using ICameraContainerMovementPreferences = TowerBuilder.Gameplay.Camera.Container.IMovementPreferences;
 
-namespace TowerBuilder.Installers
+namespace TowerBuilder.Data.Installers
 {
     [AddComponentMenu("Installers/Gameplay Preferences Installer")]
     public class GameplayPreferencesInstaller : MonoInstaller
